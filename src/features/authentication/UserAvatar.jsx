@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useUser } from "./useUser";
+import { supabaseUrl } from "../../services/supabase";
 
 const StyledUserAvatar = styled.div`
   display: flex;
