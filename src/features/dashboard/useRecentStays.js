@@ -20,8 +20,10 @@ export function useRecentStays() {
     queryKey: ["stays", `last-${numDays}`],
   });
 
+  // if (!isLoading) console.log(stays);
+
   const confirmedStays = stays?.filter(
-    (stay) => stay.status === "checkedin" || stay.status === "checked-out"
+    (stay) => stay.status === "checked-in" || stay.status === "checked-out"
   );
 
   return { isLoading, stays, confirmedStays, numDays };
