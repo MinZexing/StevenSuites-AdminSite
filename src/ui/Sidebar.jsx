@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 import Uploader from "../data/Uploader";
+import { useNavigate } from "react-router-dom";
 
 const StyledSiderbar = styled.aside`
   background-color: var(--color-grey-0);
@@ -15,9 +16,11 @@ const StyledSiderbar = styled.aside`
 `;
 
 function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <StyledSiderbar>
-      <Logo />
+      <Logo onClick={() => navigate("/dashboard")} />
       <MainNav />
 
       <Uploader />

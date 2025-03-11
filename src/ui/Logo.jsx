@@ -6,18 +6,23 @@ const StyledLogo = styled.div`
 `;
 
 const Img = styled.img`
-  height: 9.6rem;
+  height: 12.8rem;
   width: auto;
+  cursor: ${(props) => (props.$clickable ? "pointer" : "default")};
 `;
 
-function Logo() {
+function Logo({ onClick = null }) {
   const { isDarkMode } = useDarkMode();
-
-  const src = isDarkMode ? "logo-dark.png" : "./logo-light.png";
+  const src = isDarkMode ? "darklogo.png" : "./lightlogo.png";
 
   return (
     <StyledLogo>
-      <Img src={src} alt="Logo" />
+      <Img
+        src={src}
+        alt="Logo"
+        onClick={onClick || undefined}
+        $clickable={!!onClick}
+      />
     </StyledLogo>
   );
 }
