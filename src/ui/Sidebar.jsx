@@ -22,8 +22,8 @@ function Sidebar() {
     <StyledSiderbar>
       <Logo onClick={() => navigate("/dashboard")} />
       <MainNav />
-
-      <Uploader />
+      {/* 
+      <Uploader /> */}
     </StyledSiderbar>
   );
 }
